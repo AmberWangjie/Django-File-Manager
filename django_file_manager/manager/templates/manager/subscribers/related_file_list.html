@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% include 'manager/subscribers/file_header.html' with active='related' %}
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Description</th>
+          <th>Publisher</th>
+          <th>Since</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for file in files %}
+          <tr>
+            <td>{{ file.document.document.name }}</td>
+            <td>{{ file.document.description }}</td>
+            <td>{{ file.document.publisher.get_html_badge }}</td>
+            <td>{{ file.document.uploaded_at }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="3">No documentations matching your interests right now.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

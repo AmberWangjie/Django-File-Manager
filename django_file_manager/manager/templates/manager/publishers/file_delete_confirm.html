@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'publishers:file_change_list' %}">My Files</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'publishers:file_change' file.pk %}">{{ file.document.name }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Confirm deletion</li>
+    </ol>
+  </nav>

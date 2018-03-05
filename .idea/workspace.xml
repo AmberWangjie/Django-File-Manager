@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="58c69c2d-a3a4-4466-8975-fa1bb5426541" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/apps.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/decorators.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/forms.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/migrations/0002_create_initial_subjects.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/migrations/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/home.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/students/_header.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/students/interests_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/students/quiz_list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/students/take_quiz_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/students/taken_quiz_list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/question_add_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/question_change_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/question_delete_confirm.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/quiz_add_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/quiz_change_form.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/quiz_change_list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/quiz_delete_confirm.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/templates/classroom/teachers/quiz_results.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/views/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/views/classroom.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/views/students.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/classroom/views/teachers.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/django_school/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/django_school/settings.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/django_school/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/django_school/wsgi.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/manage.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/css/app.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/css/students.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/css/teachers.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/img/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/img/favicon.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/config.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/css/animation.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/css/fontello-codes.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/css/fontello-embedded.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/css/fontello-ie7-codes.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/css/fontello-ie7.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/css/fontello.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/demo.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/font/fontello.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/font/fontello.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/font/fontello.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/font/fontello.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/static/vendor/fontello-2f186091/font/fontello.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/templates/404.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/templates/500.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/templates/base.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/templates/registration/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/templates/registration/signup.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/django_school/templates/registration/signup_form.html" afterPath="" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="30" />
+    <option name="y" value="23" />
+    <option name="width" value="1239" />
+    <option name="height" value="727" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-file-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-file-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-file-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django-file-manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="django_file_manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="django-file-manager" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="django-file-manager" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="django-file-manager" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="django-file-manager" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="django-file-manager" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="django-file-manager" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="django-file-manager" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58c69c2d-a3a4-4466-8975-fa1bb5426541" name="Default" comment="" />
+      <created>1519587556882</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1519587556882</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="30" y="23" width="1239" height="727" extended-state="0" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19128329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+</project>

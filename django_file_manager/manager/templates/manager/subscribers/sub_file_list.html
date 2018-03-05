@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% include 'manager/subscribers/file_header.html' with active='subscribed' %}
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Subject</th>
+          <th>About</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for sub_file in sub_files %}
+          <tr>
+            <td>{{ sub_file.document.document.name }}</td>
+            <td>{{ sub_file.document.subject.get_html_badge }}</td>
+            <td>{{ sub_file.document.description }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="3">You haven't subscribe any documentation yet.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

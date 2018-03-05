@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags humanize %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{% url 'publishers:file_change_list' %}">My Files</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'publishers:file_change' file.pk %}">{{ file.document.name }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Details</li>
+    </ol>
+  </nav>
+  <h2 class="mb-3">{{ file.document.name }} Details</h2>
+
+   <div class="card">
+    <div class="card-header">
+      <strong>Published File Detail</strong>
+      <!-- <span class="badge badge-pill badge-primary float-right">Average Score: {{ quiz_score.average_score|default_if_none:0.0 }}</span> -->
+    </div>
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Subscribers</th>
+          <th>Published Date</th>
+          <th>Path</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for file in files %}
+          <tr>
+            <td>{{ file.subscriber.user.username }}</td>
+            <td>{{ file.uploaded_at }}</td>
+            <td>{{ file.document.path }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class="card-footer text-muted">
+      Total respondents: <strong>{{ total_pub_files }}</strong>
+    </div>
+  </div>
+{% endblock %}
