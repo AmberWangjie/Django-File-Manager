@@ -14,6 +14,11 @@ First, clone the repository to your local machine:
 git clone https://github.com/AmberWangjie/Django-File-Manager.git
 ```
 
+Run program under virtual environment:
+```bash
+source school/bin/activate
+```
+
 Install the requirements:
 
 ```bash
