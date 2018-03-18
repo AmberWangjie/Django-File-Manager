@@ -10,7 +10,7 @@ urlpatterns = [
 
     path('subscribers/', include(([
         path('', subscribers.QuizListView.as_view(), name='quiz_list'),
-        path('relate-files/', subscribers.RelateFileListView.as_view(), name='related_file_list'),
+        path('relate-files/', subscribers.RelatedFileListView.as_view(), name='related_file_list'),
         path('sub-files/', subscribers.SubFilesListView.as_view(), name='sub_file_list'),
         path('interests/', subscribers.SubscriberInterestsView.as_view(), name='subscriber_interests'),
         path('file-interests/', subscribers.SubscriberFileInterestsView.as_view(), name='subscriber_file_interests'),
@@ -30,9 +30,9 @@ urlpatterns = [
         path('quiz/<int:quiz_pk>/question/<int:question_pk>/delete/', publishers.QuestionDeleteView.as_view(), name='question_delete'),
        # path('file/', publishers.FileListView.as_view(), name='file_change_list'),
         #path('file/upload/', publishers.simple_upload, name='simple_upload'),
-        path('file/upload/', publishers.form_upload, name='form_upload'),
+        path('file/upload/', publishers.FileCreateView, name='file_upload'),
         #path('file/<int:pk>/', publishers.FileUpdateView.as_view(), name='file_change'),
-        path('file/<int:pk>/', publishers.FileUpdateView.as_view(), name='file_change'),
+        #path('file/<int:pk>/', publishers.FileUpdateView.as_view(), name='file_change'),
         path('file/<int:pk>/results/', publishers.FileResultsView.as_view(), name='file_results'),
     ], 'manager'), namespace='publishers')),
 ]

@@ -79,9 +79,9 @@ class QuizListView(ListView):
 
 
 @method_decorator([login_required, subscriber_required], name='dispatch')
-class RelateFileListView(ListView):
+class RelatedFileListView(ListView):
     model = Document
-    ordering = ('document', )
+    ordering = ('document.name', 'uploaded_at', 'publisher')
     context_object_name = 'files'
     template_name = 'manager/subscribers/related_file_list.html'
 
@@ -162,3 +162,31 @@ def take_quiz(request, pk):
         'form': form,
         'progress': progress
     })
+
+
+@login_required
+@subscriber_required
+def sub_document(request, pk):
+    document = get_object_or_404(Document, pk=pk)
+    subscriber = request.user.subscriber
+
+    if subscriber.documents.filter(pk=pk).exists():
+        return render(request, 'subscribers/sub_file_list.html')
+
+    if request.method == 'POST':
+        form = SubFileForm(document=document, data=request.POST)
+        if form.is_valid():
+            with transaction.atomic():
+                subscriber_answer = form.save(commit=False)
+                subscriber_answer.subscriber = subscriber
+                subscriber_answer.save()
+    else:
+        form = SubFileForm(doocument=document)
+
+    return render(request, 'manager/subscribers/sub_file_form.html', {
+            'document' : document,
+            'form' : form,
+            'date' : date
+    })
+
+

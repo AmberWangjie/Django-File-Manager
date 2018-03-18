@@ -6,37 +6,40 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="{% url 'publishers:file_change_list' %}">My Files</a></li>
-      <li class="breadcrumb-item"><a href="{% url 'publishers:file_change' file.pk %}">{{ file.document.name }}</a></li>
+     <!--  <li class="breadcrumb-item"><a href="{% url 'publishers:file_change' file.pk %}">{{ file.descrption }}</a></li> -->
       <li class="breadcrumb-item active" aria-current="page">Details</li>
     </ol>
   </nav>
   <h2 class="mb-3">{{ file.document.name }} Details</h2>
-
    <div class="card">
     <div class="card-header">
-      <strong>Published File Detail</strong>
+      <strong>Document History</strong>
       <!-- <span class="badge badge-pill badge-primary float-right">Average Score: {{ quiz_score.average_score|default_if_none:0.0 }}</span> -->
     </div>
     <table class="table mb-0">
       <thead>
         <tr>
-          <th>Subscribers</th>
-          <th>Published Date</th>
-          <th>Path</th>
+          <th>operation</th>
+          <th>Performed by</th>
+          <th>Date</th>
         </tr>
       </thead>
       <tbody>
-        {% for file in files %}
+        {% for history in histories %}
           <tr>
-            <td>{{ file.subscriber.user.username }}</td>
-            <td>{{ file.uploaded_at }}</td>
-            <td>{{ file.document.path }}</td>
+            <td>{{ history.operation }}</td>
+            <td>{{ history.performer.user.username }}</td>
+            <td>{{ history.date }}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="4">No history matching your document right now.</td>
           </tr>
         {% endfor %}
       </tbody>
     </table>
     <div class="card-footer text-muted">
-      Total respondents: <strong>{{ total_pub_files }}</strong>
+      Total histories: <strong>{{ total_histories }}</strong>
     </div>
   </div>
 {% endblock %}

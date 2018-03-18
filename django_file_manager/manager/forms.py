@@ -2,9 +2,9 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.forms.utils import ValidationError
-
+#from validatedfile import QuotaValidator
 from manager.models import (Answer, Question, Subscriber, SubscribeAnswer,
-                              Subject, User, Document)
+                              Subject, User, Document, SubFile)
 
 
 class PublishersSignUpForm(UserCreationForm):
@@ -84,6 +84,7 @@ class TakeQuizForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['answer'].queryset = question.answers.order_by('text')
 
+
 class DocumentForm(forms.ModelForm):
     class Meta:
         model = Document
@@ -92,5 +93,48 @@ class DocumentForm(forms.ModelForm):
             'subjects': forms.CheckboxSelectMultiple
         }
 
+
 class FileFieldForm(forms.Form):
     file_field = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+   # file_field = forms.FileField(validators=[QuotaValidator(max_usage=102400)], widget=forms.ClearableFileInput(attrs={'multiple': True}))
+
+#     class Meta:
+#         model = Document
+#         fields = ['document']
+
+#     def __init__(self, user, *args, **kwargs):
+#         super(FileFieldForm.self).__init__(*args, **kwargs)
+#         self.user = user
+#         self.fields['document'].validators[0].update_quota(items=self.user.documents.all(), attr_name='document',)
+
+#     def exceeds_quota(self):
+#         return self.fields['document'].validators[0].quota.exceeds()
+
+#     def save(self, *args, **kwargs):
+#         model = super(FileFieldForm, self).save(commit=False)
+#         model.user=self.user
+#         model.save()
+
+# class HistoryForm(forms.Form):
+#     class Meta:
+#         model = History
+#         fields = ('operation', 'performer', 'date') 
+
+
+# class SubFileForm(forms.ModelForm):
+#     OPTIONS = (('1', 'Subscribe'), ('2', 'Nevermind'))
+#     submission = forms.ChoiceField(choices=OPTIONS)
+#     #class Meta:
+#      #   model = SubFile
+#       #  fields = ('answer', )
+#     def __init__(self, *args, **kwargs):
+#         super(SubFileForm, self).__init__(*args, **kwargs)
+#         self.fields['submission'].choices = list(self.fields['submission'].choices)
+
+#     def clean_submission(self):
+#         data = self.cleaned_data.get('submission')
+#         if data in OPTIONS:
+#             try:
+#                 data = SubFile.objects.get()
+#             except 
+        

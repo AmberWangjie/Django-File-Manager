@@ -4,7 +4,8 @@ from django.db import models
 from django.utils.html import escape, mark_safe
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+#import magic
+#from validatedfile import ValidatedFileField
 
 class User(AbstractUser):
     is_subscriber = models.BooleanField(default=False)
@@ -53,12 +54,14 @@ class Answer(models.Model):
 
 
 class Document(models.Model):
-    publisher = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='documents')
+    publisher = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='document_publisher')
     #subscriber = models.ManyToManyField(Subscriber, through='SubFile')
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True, related_name='documents')
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True, related_name='document_subject')
     description = models.CharField(max_length=255, blank=True)
     document = models.FileField(upload_to='documents/%Y/%m/%d')
+ #   document = ValidatedFileField(null=True, blank=True, uploaded_to='documents/%Y/%m/%d', max_uploaded_size=10240, content_types=['application/pdf', 'image/png'])
     uploaded_at = models.DateTimeField(auto_now_add=True)
+    #history = models.ForeignKey(History, on_delete=models.CASCADE, null=True, related_name='document_history')
 
     def __str__(self):
         return self.document.name
@@ -94,10 +97,23 @@ class TakenQuiz(models.Model):
     score = models.FloatField()
     date = models.DateTimeField(auto_now_add=True)
 
+
 class SubFile(models.Model):
     subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE, related_name='sub_files')
     document = models.ForeignKey(Document, on_delete=models.CASCADE, related_name='sub_files')
     date = models.DateTimeField(auto_now_add=True)
+
+
+class History(models.Model):
+#    v = 'R'
+ #   e = 'W'
+    OPERATION_OPTIONS = (('c', 'Create'), ('m', 'Modify'), ('s', 'Subscribe'))
+    document = models.ForeignKey(Document, on_delete=models.CASCADE, related_name='file_history')
+    operation = models.CharField(max_length=10, choices=OPERATION_OPTIONS, default='c')
+    date = models.DateTimeField(auto_now_add=True)
+    performer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='history_performer')
+    #sub_count = models.IntegerField(default=0)
+
 
 class SubscribeAnswer(models.Model):
     subscriber = models.ForeignKey(Subscriber, on_delete=models.CASCADE, related_name='quiz_answers')

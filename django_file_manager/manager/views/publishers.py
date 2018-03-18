@@ -14,7 +14,7 @@ from django.views.generic.edit import FormView
 from django.core.files.storage import FileSystemStorage
 from ..decorators import publisher_required
 from ..forms import BaseAnswerInlineFormSet, QuestionForm, PublishersSignUpForm, DocumentForm, FileFieldForm
-from ..models import Answer, Question, Quiz, User, Document
+from ..models import Answer, Question, Quiz, User, Document, History, SubFile
 import logging
 
 logger = logging.getLogger(__name__)
@@ -71,11 +71,11 @@ class FileListView(ListView):
     context_object_name = 'files'
     template_name = 'manager/publishers/file_change_list.html'
 
-    def get_queryset(self):
-        queryset = self.request.user.documents \
-            .select_related('subject') \
-            .annotate(subscriber_count=Count('subscriber', distinct=True))
-        return queryset
+    # def get_queryset(self):
+    #     queryset = self.request.user.documents \
+    #         .select_related('publisher') \
+    #         .annotate(subscriber_count=Count('subscriber', distinct=True))
+    #     return queryset
 
 
 @login_required
@@ -95,21 +95,29 @@ def simple_upload(request):
 
 @login_required
 @publisher_required
-def form_upload(request):
+def FileCreateView(request):
     if request.method == 'POST':
-        form = DocumentForm(request.POST, request.FILES)
-        if form.is_valid():
-            document = form.save()
+        documentForm = DocumentForm(request.POST, request.FILES)
+        #historyForm = HistoryForm()
+        if documentForm.is_valid():
+            document = documentForm.save()
             document.publisher = request.user
             #document.subject = 
             document.save()
             messages.success(request, 'You have successfully uploaded your file.')
+            #history = historyForm.save()
+            #history.operation = 'c'
+            #history.performer = request.user
+            #history.document = document
+            history = History(operation='c', performer=request.user, document=document)
+            history.save()
+            #history.date = 
             #logger.info('File' + filename + 'at' + uploaded_file_url + 'uploaded!')
             return redirect('publishers:file_change_list')
     else:
-        form = DocumentForm()
-    return render(request, 'manager/publishers/form_upload.html', {
-            'form' : form
+        documentForm = DocumentForm()
+    return render(request, 'manager/publishers/file_upload.html', {
+            'form' : documentForm
     })
 
 
@@ -137,27 +145,28 @@ class QuizUpdateView(UpdateView):
 
 
 
-@method_decorator([login_required, publisher_required], name='dispatch')
-class FileUpdateView(UpdateView):
-    model = Document
-    fields = ('description', 'document.name', 'uploaded_at', 'subject', )
-    context_object_name = 'file'
-    template_name = 'manager/publishers/file_change_form.html'
+# @method_decorator([login_required, publisher_required], name='dispatch')
+# class FileUpdateView(UpdateView):
+#     model = Document
+#     fields = ('description', 'document.name', 'uploaded_at', 'subject', )
+#     context_object_name = 'files'
+#     template_name = 'manager/publishers/file_change_form.html'
 
-    # def get_context_data(self, **kwargs):
-    #     kwargs['subscriber'] = self.get_object().subscriber.annotate(subscriber_count=Count('subscriber'))
-    #     return super().get_context_data(**kwargs)
+#     # def get_context_data(self, **kwargs):
+#     #     kwargs['subscriber'] = self.get_object().subscriber.annotate(subscriber_count=Count('subscriber'))
+#     #     return super().get_context_data(**kwargs)
 
-    def get_queryset(self):
-        '''
-        This method is an implicit object-level permission management
-        This view will only match the ids of existing quizzes that belongs
-        to the logged in user.
-        '''
-        return self.request.user.document_set.all()
+#     def get_queryset(self):
+#         '''
+#         This method is an implicit object-level permission management
+#         This view will only match the ids of existing quizzes that belongs
+#         to the logged in user.
+#         '''
+#         #return self.request.user.file.all()
+#         return self.objects.all()
 
-    def get_success_url(self):
-        return reverse('publishers:file_change', kwargs={'pk' : self.object.pk})
+#     def get_success_url(self):
+#         return reverse('publishers:file_change', kwargs={'pk' : self.object.pk})
 
 
 
@@ -219,22 +228,37 @@ class QuizResultsView(DetailView):
 
 @method_decorator([login_required, publisher_required], name='dispatch')
 class FileResultsView(DetailView):
+    
+    #model = History
+    #context_object_name = 'histories'
     model = Document
-    context_object_name = 'files'
+    context_object_name = 'file'
     template_name = 'manager/publishers/file_results.html'
-
+    #pk_url_kwarg = 'document_pk'
+    # def get_context_data(self, **kwargs):
+    #     history = self.get_object()
+    #     histories = history.select_related('document').order_by('-date')
+    #     total_histories = histories.count()
+      #  histories = file.history.select_related('document').order_by('-date')
+        #one file - n histories, count how many of each operation, also show the time, better in range(in the last xx days)
     def get_context_data(self, **kwargs):
-       file = self.get_object()
-       #pub_files = file.pub_files.select_related('publisher__user').order_by('-date')
-       file_subs = file.subscriber.select_related('subscriber__user')
-       total_file_subs = file_subs.count()
-       #view =  document.pub_files.select_related('subscriber__user').order_by('-date')
-       extra_context = {
-            'file_subs' : file_subs,
-            'total_file_subs' : total_file_subs
-       }
-       kwargs.update(extra_context)
-       return super().get_context_data(**kwargs)
+        #document = self.get_object()
+        #history = self.get_object()
+        #kwargs['file'] = history.document
+        #return super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
+        context['file'] = self.get_object().document.name
+        context['histories'] = History.objects.filter(document=self.get_object())
+        return context
+    # def get_queryset(self):
+    #     queryset = self.get_object().histories \
+    #         .select_related('document') \
+    #         .order_by('-date') 
+    #         #.annotate(subscriber_count=Count('subscriber', distinct=True))
+    #     return queryset
+    #def get_queryset(self):
+        #document = self.get_object()
+        #return History.objects.filter(history__document=document).order_by(-date)
 
 
 @login_required
