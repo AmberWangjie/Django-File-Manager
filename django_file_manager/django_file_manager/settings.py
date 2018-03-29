@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 #    'validatedfile',
     'crispy_forms',
-
+    'rest_framework',
     'manager',
 ]
 
@@ -84,6 +84,12 @@ WSGI_APPLICATION = 'django_file_manager.wsgi.application'
 
 DATABASES = {
     'default': {
+        # 'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+        # 'NAME' : 'postgres',
+        # 'USER' : 'postgres',
+        # 'PASSWORD' : 'postgres',
+        # 'HOST' : 'db',
+        # 'PORT' : '5432',
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }

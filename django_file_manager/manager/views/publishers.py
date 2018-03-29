@@ -203,6 +203,7 @@ class FileDeleteView(DeleteView):
         return self.request.user.documents.all()
 
 
+
 @method_decorator([login_required, publisher_required], name='dispatch')
 class QuizResultsView(DetailView):
     model = Quiz

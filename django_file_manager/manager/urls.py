@@ -8,9 +8,12 @@ from .views import manager, subscribers, publishers
 urlpatterns = [
     path('', manager.home, name='home'),
 
+    #url(r'^api/v0/', include('manager.api.v0.urls'), name='api'),
+    path('api/v0/', include('manager.api.v0.urls'), name='api'),
+
     path('subscribers/', include(([
         path('', subscribers.QuizListView.as_view(), name='quiz_list'),
-        path('relate-files/', subscribers.RelatedFileListView.as_view(), name='related_file_list'),
+        path('related-files/', subscribers.RelatedFileListView.as_view(), name='related_file_list'),
         path('sub-files/', subscribers.SubFilesListView.as_view(), name='sub_file_list'),
         path('interests/', subscribers.SubscriberInterestsView.as_view(), name='subscriber_interests'),
         path('file-interests/', subscribers.SubscriberFileInterestsView.as_view(), name='subscriber_file_interests'),

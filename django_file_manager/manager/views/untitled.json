@@ -1,0 +1,13 @@
+{
+	"hash": "ca4dd7bed52c669976073254492b28e415e6836d0bac7164ac3e1c102e24303f",
+	"index" : 4,
+	"message" : "New Block Forged",
+	"proof" : 35089,
+	"transactions" : [
+		{
+			"amount" : 1,
+			"recipient" : "d4ee26eee15148ee92c6cd394edd974e",
+			"sender" : "0"
+		}
+	]
+}
