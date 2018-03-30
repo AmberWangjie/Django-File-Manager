@@ -13,6 +13,8 @@ from .utils import SymmetricEncryption, JsonApi, EncryptionApi
 #import magic
 #from validatedfile import ValidatedFileField
 
+log = logging.getLogger(__name__)
+
 class User(AbstractUser):
     is_subscriber = models.BooleanField(default=False)
     is_publisher = models.BooleanField(default=False)
