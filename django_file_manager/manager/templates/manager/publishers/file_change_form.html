@@ -5,7 +5,7 @@
 {% block content %}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'publishers:file_change_list' %}">My Files</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'publishers:file_list' %}">My Files</a></li>
       <li class="breadcrumb-item active" aria-current="page">{{ document.description }}</li>
     </ol>
   </nav>
@@ -19,7 +19,7 @@
         {% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-success">Save changes</button>
-        <a href="{% url 'publishers:file_change_list' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+        <a href="{% url 'publishers:file_list' %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
         <a href="{% url 'publishers:file_delete' document.pk %}" class="btn btn-danger float-right">Delete</a>
       </form>
     </div>

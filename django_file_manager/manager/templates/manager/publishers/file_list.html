@@ -7,12 +7,14 @@
     </ol>
   </nav>
   <h2 class="mb-3">My Files</h2>
-  <a href="{% url 'publishers:file_upload' %}" class="btn btn-primary mb-3" role="button">Add file</a>
+  <a href="{% url 'publishers:file_upload' %}" class="btn btn-primary mb-3" role="button">Add public file</a>
+  <a href="{% url 'publishers:file_private_upload' %}" class="btn btn-primary mb-3" role="button">Add private file</a>
   <div class="card">
     <table class="table mb-0">
       <thead> 
         <tr>
           <th>Label</th>
+          <th>Size</th>
           <th>Subject</th> 
           <th>Created at</th>
           <!-- <th>Last Updated</th> -->
@@ -23,13 +25,10 @@
       <tbody>
         {% for file in files %}
           <tr>
-           <!--  <td class="align-middle"><a href="{% url 'publishers:file_change' file.pk %}">{{ file.description }}</a></td> -->
-            <td class="align-middle">{{ file.description }}</td>
+            <td class="align-middle"><a href="{{ file.upload.url }}" target="_blank">{{ file.description }}</a></td>
+            <td class="align-middle">{{ file.upload.size|filesizeformat }}</td>
             <td class="align-middle">{{ file.subject.get_html_badge }}</td> 
             <td class="align-middle">{{ file.uploaded_at }}</td>
-            <!-- <td class="align-middle">{{ file.document.path }}</td> -->
-            <!-- <td class="align-middle">{{ file.collabrator_count }}</td>
-            <td class="align-middle">{{ file.subscriber_count }}</td> -->
             <td class="text-right">
               <a href="{% url 'publishers:file_results' file.pk %}" class="btn btn-primary">View details</a>
             </td>

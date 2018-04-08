@@ -5,12 +5,11 @@
 {% block content %}
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{% url 'publishers:file_change_list' %}">My Files</a></li>
-     <!--  <li class="breadcrumb-item"><a href="{% url 'publishers:file_change' file.pk %}">{{ file.descrption }}</a></li> -->
+      <li class="breadcrumb-item"><a href="{% url 'publishers:file_list' %}">My Files</a></li>
       <li class="breadcrumb-item active" aria-current="page">Details</li>
     </ol>
   </nav>
-  <h2 class="mb-3">{{ file.document.name }} Details</h2>
+  <h2 class="mb-3">{{ file.upload.name }} Details</h2>
    <div class="card">
     <div class="card-header">
       <strong>Document History</strong>

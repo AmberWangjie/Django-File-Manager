@@ -1,0 +1,40 @@
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Submit</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Uploaded at</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for document in documents %}
+      <tr>
+        <td><a href="{{ document.upload.url }}" target="_blank">{{ document.upload.name }}</a></td>
+        <td>{{ document.uploaded_at }}</td>
+        <td>{{ document.upload.size|filesizeformat }}</td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">No data.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+class DocumentCreateView(CreateView):
+    model = Document
+    fields = ['upload', ]
+    success_url = reverse_lazy('home')
+    
+def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        documents = Document.objects.all()
+        context['documents'] = documents
+        return context
