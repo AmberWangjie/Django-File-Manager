@@ -19,7 +19,7 @@ Faker==0.8.9
 greenlet==0.4.12
 idna==2.6
 packaging==16.8
-paramiko==2.4.1
+paramiko==2.10.1
 pinax-documents==1.0.1
 pinax-templates==1.0.4
 psycopg2==2.7.4
